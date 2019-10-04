@@ -1,6 +1,6 @@
-package classwork.lesson170624;
+package classwork.mytestframework;
 
-public class SimpleUnit {
+public class Assert {
 
 	public static boolean assertEqual(String actual, String expected) {
 		//FIXME 
