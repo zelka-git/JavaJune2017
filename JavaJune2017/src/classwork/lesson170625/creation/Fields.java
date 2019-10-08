@@ -16,8 +16,8 @@ public class Fields {
 			
 		}
 		public void printState() {
-			int x; // no default value!!!
-			System.out.println(x);
+//			int x; // no default value!!!
+//			System.out.println(x);
 			
 			int y = 0;//inited
 			System.out.println(y);
