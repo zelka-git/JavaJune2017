@@ -6,7 +6,7 @@ public class Assert {
 		//FIXME 
 		boolean equals = actual.equals(expected);
 		if (!equals) {
-			System.err.println("Test failed: expected " + expected + ", but actual " + actual);
+			System.err.println("Test failed: expected '" + expected + "', but actual '" + actual + "'");
 		}
 		return equals;
 	}
@@ -15,7 +15,7 @@ public class Assert {
 		//FIXME 
 		boolean notEquals = !actual.equals(expected);
 		if (!notEquals) {
-			System.err.println("Test failed: expected NOT " + expected + ", but actual " + actual);		
+			System.err.println("Test failed: expected NOT '" + expected + "', but actual '" + actual + "'");		
 		}
 		return notEquals;
 	}
