@@ -3,8 +3,12 @@ package classwork.mytestframework;
 public class Assert {
 
 	public static boolean assertEqual(String actual, String expected) {
-		//FIXME 
-		boolean equals = actual.equals(expected);
+		boolean equals;
+		if (actual == null) {
+			equals = actual == expected;
+		}else {			
+			equals = actual.equals(expected);
+		}
 		if (!equals) {
 			System.err.println("Test failed: expected '" + expected + "', but actual '" + actual + "'");
 		}
@@ -12,8 +16,12 @@ public class Assert {
 	}
 
 	public static boolean assertNotEqual(String actual, String expected) {
-		//FIXME 
-		boolean notEquals = !actual.equals(expected);
+		boolean notEquals;
+		if(actual == null) {
+			notEquals = actual != expected;
+		}else {
+			notEquals = !actual.equals(expected);
+		}
 		if (!notEquals) {
 			System.err.println("Test failed: expected NOT '" + expected + "', but actual '" + actual + "'");		
 		}
@@ -34,6 +42,22 @@ public class Assert {
 		boolean notEquals = actual != expected;
 		if (!notEquals) {
 			System.err.println("Test failed: expected NOT " + expected + ", but actual " + actual);
+		}
+		return notEquals;
+	}
+
+	public static boolean assertEqual(boolean actual, boolean expected) {
+		boolean equals = actual == expected;
+		if(!equals) {
+			System.err.println("Test failed: expected " + expected + ", but actual" + actual);
+		}
+		return equals;
+	}
+
+	public static boolean assertNotEqual(boolean actual, boolean expected) {
+		boolean notEquals = actual != expected;
+		if(!notEquals) {
+			System.err.println("Test failed: expected NOT " + expected + ", but actual" + actual);
 		}
 		return notEquals;
 	}
