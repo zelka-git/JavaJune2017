@@ -4,6 +4,20 @@ import java.util.Arrays;
 
 public class StringStackWithThrow {
 	
+	public static class Overflow extends Exception{
+		
+		private int size;
+		
+		public Overflow(int size) {
+			this.size = size;
+		}
+		
+		public int getSize() {
+			return size;
+		}
+		
+	}
+	
 	private static final int DEFAULT_MAX_SIZE = 3;
 	private String[] elements;
 	private int size;
@@ -18,8 +32,13 @@ public class StringStackWithThrow {
 	}
 
 	public boolean push(String string) throws Exception {
+		
+		if (string == null ) {
+			throw new IllegalArgumentException("null are not allowed");
+		}
+		
 		if(size >= elements.length) {
-			throw new Exception("Stack overflow");
+			throw new Overflow(size);
 		}
 		try {
 			this.elements[size++] = string;			
